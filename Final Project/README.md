@@ -156,14 +156,3 @@ and the MAUP, spatial analysis, GIScience.
 
 **Contact.** [ekorkmaz@uiowa.edu](mailto:ekorkmaz@uiowa.edu) · [LinkedIn](https://www.linkedin.com/in/elif-korkmaz-2a16b3176/)
 
-## Reference
-
-Nelson, J. K. (2026). A difference mapping approach for detecting cartographic
-effects of the modifiable areal unit problem. *KN – Journal of Cartography and
-Geographic Information*.
-
-## Use of AI tools
-
-Claude (Anthropic) was used to help write and test the code and the
-documentation. All design decisions, the checks of the results, and the
-interpretation are my own, and I reviewed and can explain every function.
