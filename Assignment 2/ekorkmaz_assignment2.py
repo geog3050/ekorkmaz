@@ -56,6 +56,10 @@ def printFeatureClassNames(workspace):
 ###################################################################### 
 def printNumericalFieldNames(inputFc, workspace):
     try:
+        if not arcpy.Exists(workspace):  # check that the workspace exists
+            print("Workspace does not exist:", workspace)
+            return
+
         arcpy.env.workspace = workspace # so ArcPy can find inputFc by its name
         if not arcpy.Exists(inputFc): # check that the feature class exists
             print("Feature class does not exist:", inputFc)
