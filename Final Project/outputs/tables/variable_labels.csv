@@ -1,0 +1,100 @@
+code,label,concept
+B01001_001,Estimate!!Total:,Sex by Age
+B01001_003,Estimate!!Total:!!Male:!!Under 5 years,Sex by Age
+B01001_004,Estimate!!Total:!!Male:!!5 to 9 years,Sex by Age
+B01001_005,Estimate!!Total:!!Male:!!10 to 14 years,Sex by Age
+B01001_006,Estimate!!Total:!!Male:!!15 to 17 years,Sex by Age
+B01001_020,Estimate!!Total:!!Male:!!65 and 66 years,Sex by Age
+B01001_021,Estimate!!Total:!!Male:!!67 to 69 years,Sex by Age
+B01001_022,Estimate!!Total:!!Male:!!70 to 74 years,Sex by Age
+B01001_023,Estimate!!Total:!!Male:!!75 to 79 years,Sex by Age
+B01001_024,Estimate!!Total:!!Male:!!80 to 84 years,Sex by Age
+B01001_025,Estimate!!Total:!!Male:!!85 years and over,Sex by Age
+B01001_026,Estimate!!Total:!!Female:,Sex by Age
+B01001_027,Estimate!!Total:!!Female:!!Under 5 years,Sex by Age
+B01001_028,Estimate!!Total:!!Female:!!5 to 9 years,Sex by Age
+B01001_029,Estimate!!Total:!!Female:!!10 to 14 years,Sex by Age
+B01001_030,Estimate!!Total:!!Female:!!15 to 17 years,Sex by Age
+B01001_044,Estimate!!Total:!!Female:!!65 and 66 years,Sex by Age
+B01001_045,Estimate!!Total:!!Female:!!67 to 69 years,Sex by Age
+B01001_046,Estimate!!Total:!!Female:!!70 to 74 years,Sex by Age
+B01001_047,Estimate!!Total:!!Female:!!75 to 79 years,Sex by Age
+B01001_048,Estimate!!Total:!!Female:!!80 to 84 years,Sex by Age
+B01001_049,Estimate!!Total:!!Female:!!85 years and over,Sex by Age
+B01002_001,Estimate!!Median age --!!Total:,Median Age by Sex
+B01003_001,Estimate!!Total,Total Population
+B03002_001,Estimate!!Total:,Hispanic or Latino Origin by Race
+B03002_004,Estimate!!Total:!!Not Hispanic or Latino:!!Black or African American alone,Hispanic or Latino Origin by Race
+B03002_005,Estimate!!Total:!!Not Hispanic or Latino:!!American Indian and Alaska Native alone,Hispanic or Latino Origin by Race
+B03002_006,Estimate!!Total:!!Not Hispanic or Latino:!!Asian alone,Hispanic or Latino Origin by Race
+B03002_012,Estimate!!Total:!!Hispanic or Latino:,Hispanic or Latino Origin by Race
+B11001_001,Estimate!!Total:,Household Type (Including Living Alone)
+B11001_006,"Estimate!!Total:!!Family households:!!Other family:!!Female householder, no spouse present",Household Type (Including Living Alone)
+B11003_001,Estimate!!Total:,Family Type by Presence and Age of Own Children Under 18 Years
+B11003_010,"Estimate!!Total:!!Other family:!!Male householder, no spouse present:!!With own children of the householder under 18 years:",Family Type by Presence and Age of Own Children Under 18 Years
+B11003_016,"Estimate!!Total:!!Other family:!!Female householder, no spouse present:!!With own children of the householder under 18 years:",Family Type by Presence and Age of Own Children Under 18 Years
+B15003_001,Estimate!!Total:,Educational Attainment for the Population 25 Years and Over
+B15003_002,Estimate!!Total:!!No schooling completed,Educational Attainment for the Population 25 Years and Over
+B15003_003,Estimate!!Total:!!Nursery school,Educational Attainment for the Population 25 Years and Over
+B15003_004,Estimate!!Total:!!Kindergarten,Educational Attainment for the Population 25 Years and Over
+B15003_005,Estimate!!Total:!!1st grade,Educational Attainment for the Population 25 Years and Over
+B15003_006,Estimate!!Total:!!2nd grade,Educational Attainment for the Population 25 Years and Over
+B15003_007,Estimate!!Total:!!3rd grade,Educational Attainment for the Population 25 Years and Over
+B15003_008,Estimate!!Total:!!4th grade,Educational Attainment for the Population 25 Years and Over
+B15003_009,Estimate!!Total:!!5th grade,Educational Attainment for the Population 25 Years and Over
+B15003_010,Estimate!!Total:!!6th grade,Educational Attainment for the Population 25 Years and Over
+B15003_011,Estimate!!Total:!!7th grade,Educational Attainment for the Population 25 Years and Over
+B15003_012,Estimate!!Total:!!8th grade,Educational Attainment for the Population 25 Years and Over
+B15003_013,Estimate!!Total:!!9th grade,Educational Attainment for the Population 25 Years and Over
+B15003_014,Estimate!!Total:!!10th grade,Educational Attainment for the Population 25 Years and Over
+B15003_015,Estimate!!Total:!!11th grade,Educational Attainment for the Population 25 Years and Over
+B15003_016,"Estimate!!Total:!!12th grade, no diploma",Educational Attainment for the Population 25 Years and Over
+B19001_001,Estimate!!Total:,Household Income in the Past 12 Months (in 2024 Inflation-Adjusted Dollars)
+B19001_017,"Estimate!!Total:!!$200,000 or more",Household Income in the Past 12 Months (in 2024 Inflation-Adjusted Dollars)
+B19055_001,Estimate!!Total:,Social Security Income in the Past 12 Months for Households
+B19055_002,Estimate!!Total:!!With Social Security income,Social Security Income in the Past 12 Months for Households
+B19301_001,Estimate!!Per capita income in the past 12 months (in 2024 inflation-adjusted dollars),Per Capita Income in the Past 12 Months (in 2024 Inflation-Adjusted Dollars)
+B23025_003,Estimate!!Total:!!In labor force:!!Civilian labor force:,Employment Status for the Population 16 Years and Over
+B23025_005,Estimate!!Total:!!In labor force:!!Civilian labor force:!!Unemployed,Employment Status for the Population 16 Years and Over
+B25002_001,Estimate!!Total:,Occupancy Status
+B25002_003,Estimate!!Total:!!Vacant,Occupancy Status
+B25003_001,Estimate!!Total:,Tenure
+B25003_003,Estimate!!Total:!!Renter occupied,Tenure
+B25008_001,Estimate!!Total:,Total Population in Occupied Housing Units by Tenure
+B25024_001,Estimate!!Total:,Units in Structure
+B25024_010,Estimate!!Total:!!Mobile home,Units in Structure
+B25044_001,Estimate!!Total:,Tenure by Vehicles Available
+B25044_003,Estimate!!Total:!!Owner occupied:!!No vehicle available,Tenure by Vehicles Available
+B25044_010,Estimate!!Total:!!Renter occupied:!!No vehicle available,Tenure by Vehicles Available
+B25070_001,Estimate!!Total:,Gross Rent as a Percentage of Household Income in the Past 12 Months
+B25070_007,Estimate!!Total:!!30.0 to 34.9 percent,Gross Rent as a Percentage of Household Income in the Past 12 Months
+B25070_008,Estimate!!Total:!!35.0 to 39.9 percent,Gross Rent as a Percentage of Household Income in the Past 12 Months
+B25070_009,Estimate!!Total:!!40.0 to 49.9 percent,Gross Rent as a Percentage of Household Income in the Past 12 Months
+B25070_010,Estimate!!Total:!!50.0 percent or more,Gross Rent as a Percentage of Household Income in the Past 12 Months
+B25070_011,Estimate!!Total:!!Not computed,Gross Rent as a Percentage of Household Income in the Past 12 Months
+B25091_001,Estimate!!Total:,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_008,Estimate!!Total:!!Housing units with a mortgage:!!30.0 to 34.9 percent,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_009,Estimate!!Total:!!Housing units with a mortgage:!!35.0 to 39.9 percent,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_010,Estimate!!Total:!!Housing units with a mortgage:!!40.0 to 49.9 percent,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_011,Estimate!!Total:!!Housing units with a mortgage:!!50.0 percent or more,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_012,Estimate!!Total:!!Housing units with a mortgage:!!Not computed,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_019,Estimate!!Total:!!Housing units without a mortgage:!!30.0 to 34.9 percent,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_020,Estimate!!Total:!!Housing units without a mortgage:!!35.0 to 39.9 percent,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_021,Estimate!!Total:!!Housing units without a mortgage:!!40.0 to 49.9 percent,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_022,Estimate!!Total:!!Housing units without a mortgage:!!50.0 percent or more,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B25091_023,Estimate!!Total:!!Housing units without a mortgage:!!Not computed,Mortgage Status by Selected Monthly Owner Costs as a Percentage of Household Income in the Past 12 Months
+B26001_001,Estimate!!Total:,Group Quarters Population
+C16002_001,Estimate!!Total:,Household Language by Household Limited English Speaking Status
+C16002_004,Estimate!!Total:!!Spanish:!!Limited English speaking household,Household Language by Household Limited English Speaking Status
+C16002_007,Estimate!!Total:!!Other Indo-European languages:!!Limited English speaking household,Household Language by Household Limited English Speaking Status
+C16002_010,Estimate!!Total:!!Asian and Pacific Island languages:!!Limited English speaking household,Household Language by Household Limited English Speaking Status
+C16002_013,Estimate!!Total:!!Other languages:!!Limited English speaking household,Household Language by Household Limited English Speaking Status
+C17002_001,Estimate!!Total:,Ratio of Income to Poverty Level in the Past 12 Months
+C17002_002,Estimate!!Total:!!Under .50,Ratio of Income to Poverty Level in the Past 12 Months
+C17002_003,Estimate!!Total:!!.50 to .99,Ratio of Income to Poverty Level in the Past 12 Months
+C24010_001,Estimate!!Total:,Sex by Occupation for the Civilian Employed Population 16 Years and Over
+C24010_019,Estimate!!Total:!!Male:!!Service occupations:,Sex by Occupation for the Civilian Employed Population 16 Years and Over
+C24010_055,Estimate!!Total:!!Female:!!Service occupations:,Sex by Occupation for the Civilian Employed Population 16 Years and Over
+C24030_001,Estimate!!Total:,Sex by Industry for the Civilian Employed Population 16 Years and Over
+C24030_003,"Estimate!!Total:!!Male:!!Agriculture, forestry, fishing and hunting, and mining:",Sex by Industry for the Civilian Employed Population 16 Years and Over
+C24030_030,"Estimate!!Total:!!Female:!!Agriculture, forestry, fishing and hunting, and mining:",Sex by Industry for the Civilian Employed Population 16 Years and Over

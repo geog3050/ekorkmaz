@@ -27,12 +27,12 @@ are not read as effects of the unit.
 | `outputs/maps/`, `outputs/tables/` | Figures and tables (created by the code) |
 | `logs/run.log` | Messages and warnings from each run |
 
-`data/`, `outputs/`, and `logs/` are not in the repository; the code creates them.
+`data/` and `logs/` are not in the repository; the code creates them. `outputs/` holds the maps and tables used in the report (the code recreates them).
 `data/raw/metadata.csv` records every download (file, source, status), including failed ones.
 
 ## Data
 
-Both datasets are public and are downloaded by the code.
+Both datasets are public and are downloaded by the code. The raw files (about 105 MB) are larger than the 100 MB limit, so they are not in the repository; the first run downloads them with your own Census API key (see How to run). The raw files (about 105 MB) are larger than the 100 MB limit, so they are not in the repository; the first run downloads them with your own Census API key (see How to run).
 
 * **American Community Survey (ACS) 2020–2024 5-year Detailed Tables**, U.S. Census
   Bureau, through the Census Data API (https://api.census.gov/data/2024/acs/acs5).
