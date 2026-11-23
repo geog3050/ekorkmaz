@@ -1,4 +1,4 @@
-# Data and outputs are created by the code, so they are not pushed
+# Data and logs are created by the code, so they are not pushed
 data/
 logs/
 # Never push the API key
