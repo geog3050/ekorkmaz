@@ -67,9 +67,14 @@ def printNumericalFieldNames(inputFc, workspace):
 
         # Print only fields with a numerical type
         numericTypes = ["SmallInteger", "Integer", "BigInteger", "Single", "Double"]
+        found = False
         for field in arcpy.ListFields(inputFc): # reads all the attribute names (fields)
             if field.type in numericTypes:
                 print(field.name, field.type)
+                found = True
+                
+        if not found:  # check for an empty result
+            print("No numerical fields found in", inputFc)
 
     except arcpy.ExecuteError:
         print(arcpy.GetMessages(2))
