@@ -1,0 +1,299 @@
+# =====================================================================
+# Settings for the whole workflow.
+# All paths, years, thresholds and indicator definitions live here.
+# To run the analysis for another state or ACS release, change [study].
+# =====================================================================
+
+[study]
+state_fips = "08"          # Colorado
+state_abbr = "CO"
+acs_year = 2024            # last year of the 5-year ACS period (2020-2024)
+tiger_year = 2024          # TIGER/Line boundary year
+scales = ["block group", "tract", "county"]   # from smallest to largest
+crs = "EPSG:5070"          # NAD83 / Conus Albers, an equal-area projection
+
+[paths]                    # all paths are relative to the repository folder
+raw = "data/raw"           # downloads, never edited
+processed = "data/processed"
+maps = "outputs/maps"
+tables = "outputs/tables"
+logs = "logs"
+
+[maps]
+zoom_name = "Denver metro"                    # second row of each map: a zoom on the densest area
+zoom_bbox = [-105.35, 39.45, -104.60, 40.10]  # west, south, east, north (degrees)
+zoom_indicator_maps = false                   # add the zoom row to the 24 indicator maps (slower)
+diff_limit = 60                               # color range of difference maps: -60 to +60 rank points
+hist_bin = 5                                  # bin width (rank points) of the difference histograms
+
+[test]
+sample_units = 2           # units per scale in the hand-check table
+sample_indicators = ["QPOVTY", "QRENTER", "PERCAP", "QNOAUTO"]
+seed = 11
+
+[download]
+max_tries = 3              # tries per web request before giving up
+wait_seconds = 5           # wait between tries (doubles each time)
+vars_per_request = 48      # the Census API accepts at most 50 fields per request
+
+[screening]
+max_missing_share = 0.20   # drop an indicator if more than 20% of units are missing at any scale
+min_population = 1         # drop units with fewer people than this
+
+[index]
+retention = "kaiser"       # keep components with eigenvalue > 1 ("kaiser"), or a fixed number ("fixed")
+n_components = 6           # used only when retention = "fixed"
+loading_threshold = 0.5    # loadings at or above this size decide a component's direction
+top_share = 0.20           # "most vulnerable" = top 20% of units
+
+[uncertainty]
+n_simulations = 500        # Monte Carlo draws of the ACS estimates
+z_90 = 1.645               # ACS margins of error are at the 90% level
+seed = 3050                # fixed random seed so results can be repeated
+cv_high = 12               # CV below 12% = high reliability
+cv_low = 40                # CV above 40% = low reliability
+
+# ---------------------------------------------------------------------
+# Indicators (25 SoVI 2019 variables available in ACS detailed tables).
+#   type      "value" = a single ACS estimate (e.g., a median)
+#             "prop"  = sum(num) / sum(den) * 100  (percent)
+#             "ratio" = sum(num) / sum(den)        (e.g., persons per unit)
+#   num, den  ACS variable codes without the E/M suffix.
+#             A "-" in front of a code subtracts it (e.g., "not computed").
+#   direction +1 if a higher value means more vulnerable, -1 if less.
+# ---------------------------------------------------------------------
+
+# ----- Demographic (11) -----
+[[indicators]]
+name = "MEDAGE"
+label = "Median age"
+group = "Demographic"
+type = "value"
+num = ["B01002_001"]
+den = []
+direction = 1
+
+[[indicators]]
+name = "QAGEDEP"
+label = "Age dependency: % under 18 or 65 and over"
+group = "Demographic"
+type = "prop"
+num = ["B01001_003", "B01001_004", "B01001_005", "B01001_006",
+       "B01001_020", "B01001_021", "B01001_022", "B01001_023", "B01001_024", "B01001_025",
+       "B01001_027", "B01001_028", "B01001_029", "B01001_030",
+       "B01001_044", "B01001_045", "B01001_046", "B01001_047", "B01001_048", "B01001_049"]
+den = ["B01001_001"]
+direction = 1
+
+[[indicators]]
+name = "QFEMALE"
+label = "% female"
+group = "Demographic"
+type = "prop"
+num = ["B01001_026"]
+den = ["B01001_001"]
+direction = 1
+
+[[indicators]]
+name = "QASIAN"
+label = "% Asian (non-Hispanic)"
+group = "Demographic"
+type = "prop"
+num = ["B03002_006"]
+den = ["B03002_001"]
+direction = 1
+
+[[indicators]]
+name = "QBLACK"
+label = "% Black (non-Hispanic)"
+group = "Demographic"
+type = "prop"
+num = ["B03002_004"]
+den = ["B03002_001"]
+direction = 1
+
+[[indicators]]
+name = "QNATAM"
+label = "% Native American (non-Hispanic)"
+group = "Demographic"
+type = "prop"
+num = ["B03002_005"]
+den = ["B03002_001"]
+direction = 1
+
+[[indicators]]
+name = "QHISP"
+label = "% Hispanic"
+group = "Demographic"
+type = "prop"
+num = ["B03002_012"]
+den = ["B03002_001"]
+direction = 1
+
+[[indicators]]
+name = "QESL"
+label = "% limited-English households"
+group = "Demographic"
+type = "prop"
+num = ["C16002_004", "C16002_007", "C16002_010", "C16002_013"]
+den = ["C16002_001"]
+direction = 1
+
+[[indicators]]
+name = "QFHH"
+label = "% female-headed households (no spouse)"
+group = "Demographic"
+type = "prop"
+num = ["B11001_006"]
+den = ["B11001_001"]
+direction = 1
+
+[[indicators]]
+name = "QSPHH"
+label = "% single-parent families with children"
+group = "Demographic"
+type = "prop"
+num = ["B11003_010", "B11003_016"]
+den = ["B11003_001"]
+direction = 1
+
+[[indicators]]
+name = "QNRRES"
+label = "% living in group quarters (proxy for nursing home residents)"
+group = "Demographic"
+type = "prop"
+num = ["B26001_001"]
+den = ["B01003_001"]
+direction = 1
+
+# ----- Socioeconomic (8) -----
+[[indicators]]
+name = "PERCAP"
+label = "Per capita income"
+group = "Socioeconomic"
+type = "value"
+num = ["B19301_001"]
+den = []
+direction = -1
+
+[[indicators]]
+name = "QPOVTY"
+label = "% below poverty"
+group = "Socioeconomic"
+type = "prop"
+num = ["C17002_002", "C17002_003"]
+den = ["C17002_001"]
+direction = 1
+
+[[indicators]]
+name = "QCVLUN"
+label = "% civilian labor force unemployed"
+group = "Socioeconomic"
+type = "prop"
+num = ["B23025_005"]
+den = ["B23025_003"]
+direction = 1
+
+[[indicators]]
+name = "QED12LES"
+label = "% adults 25+ without a high school diploma"
+group = "Socioeconomic"
+type = "prop"
+num = ["B15003_002", "B15003_003", "B15003_004", "B15003_005", "B15003_006",
+       "B15003_007", "B15003_008", "B15003_009", "B15003_010", "B15003_011",
+       "B15003_012", "B15003_013", "B15003_014", "B15003_015", "B15003_016"]
+den = ["B15003_001"]
+direction = 1
+
+[[indicators]]
+name = "QEXTRCT"
+label = "% employed in extractive industries"
+group = "Socioeconomic"
+type = "prop"
+num = ["C24030_003", "C24030_030"]
+den = ["C24030_001"]
+direction = 1
+
+[[indicators]]
+name = "QSERV"
+label = "% employed in service occupations"
+group = "Socioeconomic"
+type = "prop"
+num = ["C24010_019", "C24010_055"]
+den = ["C24010_001"]
+direction = 1
+
+[[indicators]]
+name = "QRICH200K"
+label = "% households earning $200,000 or more"
+group = "Socioeconomic"
+type = "prop"
+num = ["B19001_017"]
+den = ["B19001_001"]
+direction = -1
+
+[[indicators]]
+name = "QSSBEN"
+label = "% households with Social Security income"
+group = "Socioeconomic"
+type = "prop"
+num = ["B19055_002"]
+den = ["B19055_001"]
+direction = 1
+
+# ----- Housing (6) -----
+[[indicators]]
+name = "PPUNIT"
+label = "Persons per occupied housing unit"
+group = "Housing"
+type = "ratio"
+num = ["B25008_001"]
+den = ["B25003_001"]
+direction = 1
+
+[[indicators]]
+name = "QRENTER"
+label = "% renter-occupied units"
+group = "Housing"
+type = "prop"
+num = ["B25003_003"]
+den = ["B25003_001"]
+direction = 1
+
+[[indicators]]
+name = "QMOHO"
+label = "% mobile homes"
+group = "Housing"
+type = "prop"
+num = ["B25024_010"]
+den = ["B25024_001"]
+direction = 1
+
+[[indicators]]
+name = "QNOAUTO"
+label = "% occupied units with no vehicle"
+group = "Housing"
+type = "prop"
+num = ["B25044_003", "B25044_010"]
+den = ["B25044_001"]
+direction = 1
+
+[[indicators]]
+name = "QCOSTBUR"
+label = "% households spending 30% or more of income on housing"
+group = "Housing"
+type = "prop"
+num = ["B25070_007", "B25070_008", "B25070_009", "B25070_010",
+       "B25091_008", "B25091_009", "B25091_010", "B25091_011",
+       "B25091_019", "B25091_020", "B25091_021", "B25091_022"]
+den = ["B25070_001", "-B25070_011", "B25091_001", "-B25091_012", "-B25091_023"]
+direction = 1
+
+[[indicators]]
+name = "QVACANT"
+label = "% vacant housing units"
+group = "Housing"
+type = "prop"
+num = ["B25002_003"]
+den = ["B25002_001"]
+direction = 1

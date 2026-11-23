@@ -1,0 +1,15 @@
+# Create the environment with:  conda env create -f environment.yml
+# Then activate it with:         conda activate sees3050-final
+name: sees3050-final
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - geopandas
+  - pyogrio
+  - scikit-learn
+  - matplotlib
+  - requests
+  - ipykernel
