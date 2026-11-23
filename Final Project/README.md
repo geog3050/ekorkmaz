@@ -142,18 +142,12 @@ fixed-structure indices).
 I am Elif Korkmaz, a PhD student in Geography at the University of Iowa,
 School of Earth, Environment, and Sustainability (since 2025). My research
 looks at how social vulnerability interacts with multiple hazards, using
-spatial analysis and GIScience methods. This project is a first step for that
-work: before I use a social vulnerability index in hazard studies, I want to
-know how much the index depends on the census unit it is built on.
+spatial analysis and GIScience methods. 
 
 **Background.** M.S. in Earth System Science (Middle East Technical University,
 2024), with a thesis on socio-spatial vulnerability to energy poverty, published
 in *Energy and Buildings* (2025). B.S. in City and Regional Planning with a minor
-in GIS and Remote Sensing (METU, 2021). Before the PhD, I worked as a project
-consultant on environmental, climate, and water projects, where I built spatial
-datasets and GIS maps. At Iowa, I designed a database and web application (the
-CHEEC Portal) as a research assistant, and I now teach discussion sections of
-SEES:1070.
+in GIS and Remote Sensing (METU, 2021). 
 
 **Interests.** Social vulnerability, multi-hazard risk, census data uncertainty
 and the MAUP, spatial analysis, GIScience.
