@@ -158,6 +158,6 @@ and the MAUP, spatial analysis, GIScience.
 
 ## Reference
 
-Nelson, J. K. (2026). A difference mapping approach for detecting cartographic
+Nelson, J. K. (2026). Difference mapping approach to detecting the cartographic
 effects of the modifiable areal unit problem. *KN – Journal of Cartography and
-Geographic Information*.
+Geographic Information*, 76, 5–24. https://doi.org/10.1007/s42489-025-00199-9
