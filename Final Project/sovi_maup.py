@@ -964,6 +964,32 @@ def compare_scales(data, tables, cfg):
         rows.append(row)
     return pd.DataFrame(rows).set_index("pair")
 
+def zoom_summary(data, tables, cfg):
+    """One row per pair of scales: how the zoom area of the maps (zoom_bbox in the
+    config, e.g. the Denver metro) differs from the rest of the state, and how the
+    largest 10% of small units (by land area) differ from their larger unit.
+    A small unit is in the zoom area if a point inside its polygon falls in the box.
+    These numbers explain why area and population shares differ."""
+    xlim, ylim = zoom_limits(cfg)
+    rows = []
+    for (small, large), t in tables.items():
+        pts = data[small]["gdf"].set_index("GEOID").representative_point().reindex(t.index)
+        inside = ((pts.x >= xlim[0]) & (pts.x <= xlim[1]) &
+                  (pts.y >= ylim[0]) & (pts.y <= ylim[1]))
+        largest = t["area_km2"] >= t["area_km2"].quantile(0.9)
+        rows.append({"pair": f"{small} - {large}",
+                     "zoom_area": cfg["maps"]["zoom_name"],
+                     "zoom_units_pct": 100 * inside.mean(),
+                     "zoom_pop_pct": weighted_share(inside, t["pop"]),
+                     "zoom_area_pct": weighted_share(inside, t["area_km2"]),
+                     "reliable_in_zoom_pct": 100 * t.loc[inside, "reliable"].mean(),
+                     "reliable_outside_pct": 100 * t.loc[~inside, "reliable"].mean(),
+                     "mean_diff_in_zoom": t.loc[inside, "diff"].mean(),
+                     "mean_diff_outside": t.loc[~inside, "diff"].mean(),
+                     "largest10_ranked_higher_pct": 100 * (t.loc[largest, "diff"] > 0).mean(),
+                     "largest10_mean_diff": t.loc[largest, "diff"].mean()})
+    return pd.DataFrame(rows).set_index("pair")
+
 
 # =====================================================================
 # Tests
@@ -1067,6 +1093,7 @@ def run_all(config_path="config.toml"):
 
     # Step 4 and tests
     compare_scales(data, tables, cfg).to_csv(tables_dir / "scale_comparison.csv")
+    zoom_summary(data, tables, cfg).to_csv(tables_dir / "zoom_summary.csv")
     check_nesting(data, cfg).to_csv(tables_dir / "test_nesting.csv")
     log.info("Finished. Tables are in outputs/tables and maps in outputs/maps.")
     return data, tables

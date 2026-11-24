@@ -114,7 +114,8 @@ Python 3.11 or newer is needed (the code uses `tomllib`).
 
 **Step 4. Compare scales:** `compare_scales` (rank correlation, top-20% agreement,
 reliable share, and the difference maps repeated with the additive and
-fixed-structure indices).
+fixed-structure indices) and `zoom_summary` (the zoom area of the maps, e.g. the
+Denver metro, against the rest of the state, and the largest 10% of units by area).
 
 ## Tests
 
@@ -136,6 +137,7 @@ fixed-structure indices).
 | `outputs/maps/difference_histograms.png` | Distribution of differences by land area and population (O2) |
 | `outputs/tables/difference_summary.csv` | Nelson-style statistics for each pair (O2) |
 | `outputs/tables/scale_comparison.csv` | Agreement between scales and robustness checks (O3) |
+| `outputs/tables/zoom_summary.csv` | Zoom area (Denver metro) vs. rest of the state, and the largest units (O2) |
 
 ## About the author
 
