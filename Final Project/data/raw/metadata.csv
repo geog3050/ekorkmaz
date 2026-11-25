@@ -1,0 +1,8 @@
+file,source,status,note
+acs2024_variable_labels.csv,https://api.census.gov/data/2024/acs/acs5/groups/{table}.json,ok,
+acs2024_CO_bg.csv,https://api.census.gov/data/2024/acs/acs5,ok,"4058 units, 99 variables"
+tl_2024_08_bg.zip,https://www2.census.gov/geo/tiger/TIGER2024/BG/tl_2024_08_bg.zip,ok,
+acs2024_CO_tract.csv,https://api.census.gov/data/2024/acs/acs5,ok,"1447 units, 99 variables"
+tl_2024_08_tract.zip,https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_08_tract.zip,ok,
+acs2024_CO_county.csv,https://api.census.gov/data/2024/acs/acs5,ok,"64 units, 99 variables"
+tl_2024_us_county.zip,https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip,ok,

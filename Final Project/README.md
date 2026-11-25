@@ -28,7 +28,7 @@ are not read as effects of the unit.
 | `logs/run.log` | Messages and warnings from each run |
 
 `data/` and `logs/` are not in the repository; the code creates them. `outputs/` holds the maps and tables used in the report (the code recreates them).
-`data/raw/metadata.csv` records every download (file, source, status), including failed ones.
+`data/raw/metadata.csv` records every download (file, source, status), including failed ones; it is the only file from `data/` in the repository.
 
 ## Data
 

@@ -1,5 +1,8 @@
 # Data and logs are created by the code, so they are not pushed
-data/
+data/*
+!data/raw/
+data/raw/*
+!data/raw/metadata.csv
 logs/
 # Never push the API key
 census_api_key.txt
