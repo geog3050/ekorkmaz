@@ -841,7 +841,8 @@ def simulate_ranks(d, cfg, structure, rng):
 
 def run_simulations(data, structures, cfg):
     """Run simulate_ranks for every scale with one fixed random seed.
-    Saves the simulated ranks in data/processed so they can be reused."""
+    Saves the simulated ranks in data/processed so they can be checked.
+    They are recomputed on every run."""
     rng = np.random.default_rng(cfg["uncertainty"]["seed"])
     for scale, d in data.items():
         out = Path(cfg["paths"]["processed"]) / f"simulated_ranks_{SCALE_CODE[scale]}.csv"
