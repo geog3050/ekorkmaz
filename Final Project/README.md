@@ -23,7 +23,7 @@ are not read as effects of the unit.
 | `docs/make_workflow.py`, `docs/workflow.png` | Script that draws the workflow diagram, and the diagram |
 | `docs/Elif_Korkmaz_CV.pdf` | Author's CV |
 | `data/raw/` | Downloads, saved once and never edited (created by the code) |
-| `data/processed/` | Difference tables and simulated ranks (created by the code) |
+| `data/processed/` | Simulated ranks of the Monte Carlo runs (created by the code) |
 | `outputs/maps/`, `outputs/tables/` | Figures and tables (created by the code) |
 | `logs/run.log` | Messages and warnings from each run |
 
@@ -136,6 +136,7 @@ Denver metro, against the rest of the state, and the largest 10% of units by are
 | `outputs/maps/difference_*.png` | Difference maps; right panels show reliable differences only (O2) |
 | `outputs/maps/difference_histograms.png` | Distribution of differences by land area and population (O2) |
 | `outputs/tables/difference_summary.csv` | Nelson-style statistics for each pair (O2) |
+| `outputs/tables/differences_bg_tract.csv` (and `_bg_county`, `_tract_county`) | Rank difference, 90% interval, and reliability for every unit, for each pair (O2) |
 | `outputs/tables/scale_comparison.csv` | Agreement between scales and robustness checks (O3) |
 | `outputs/tables/zoom_summary.csv` | Zoom area (Denver metro) vs. rest of the state, and the largest units (O2) |
 

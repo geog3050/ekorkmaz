@@ -1084,7 +1084,7 @@ def run_all(config_path="config.toml"):
     tables = {}
     for small, large in scale_pairs(cfg):
         table = add_reliability(difference_table(data, small, large), data, small, large)
-        table.to_csv(Path(cfg["paths"]["processed"]) /
+        table.to_csv(Path(cfg["paths"]["tables"]) /
                      f"differences_{SCALE_CODE[small]}_{SCALE_CODE[large]}.csv")
         plot_difference_maps(data, table, small, large, cfg)
         tables[(small, large)] = table
